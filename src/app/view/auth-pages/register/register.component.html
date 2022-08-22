@@ -1,0 +1,125 @@
+<div class="container-fluid classFigma">
+    <div class="d-flex flex-wrap justify-content-evenly">
+  
+  
+      <div class="">
+        <div class="">
+          <img src="./assets/logo/subio.svg" alt="" width="224.6px" height="100px">
+  
+        </div>
+        <div class="textSubio">
+          <p class="marPad0 textLeftD">
+            Subio Help you to achieve personal,
+            team or business goal in your Life.
+  
+          </p>
+        </div>
+  
+      </div>
+  
+  
+  
+  
+      <div class="">
+        <div class="formCard">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="formElement">
+  
+              <div class="regTitle">
+                <p class="marPad0">
+                  Register
+                </p>
+              </div>
+              <div class="regTitle2">
+                <p class="marPad0">
+                  It's quick and easy.
+                </p>
+              </div>
+  
+              <div class="parrent">
+                <div class="inputEmail child">
+                  <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                    formControlName="userName" [class.is-invalid]="submitted && formControls.userName.errors">
+                 
+                  <div
+                    *ngIf="formControls.userName.invalid && (formControls.userName.dirty || formControls.userName.touched)"
+                    class="invalid-feedback">
+                    
+                  </div>
+                </div>
+  
+  
+                <div class="inputPass child">
+                  <input type="text" class="form-control" id="lastName" placeholder="last name" formControlName="lastName"
+                    [class.is-invalid]="submitted && formControls.lastName.errors">
+                 
+  
+                  <div
+                    *ngIf="formControls.userName.invalid && (formControls.userName.dirty || formControls.userName.touched)"
+                    class="invalid-feedback">
+                   
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+              <div class="inputPass">
+                <input type="text" class="form-control" id="emailAddress" placeholder="Email adress"
+                  formControlName="email" autocomplete="off">
+               
+  
+                <div
+                  *ngIf="formControls.userName.invalid && (formControls.userName.dirty || formControls.userName.touched)"
+                  class="invalid-feedback">
+                  
+                </div>
+  
+  
+              </div>
+  
+              <div class="inputPass">
+                <input type="password" class="form-control" id="password" autocomplete="off" placeholder="password"
+                  formControlName="password" [class.is-invalid]="submitted && formControls.password.errors">
+                
+                <div
+                  *ngIf="formControls.userName.invalid && (formControls.userName.dirty || formControls.userName.touched)"
+                  class="invalid-feedback">
+                  
+                </div>
+              </div>
+  
+              <div class="inputPass">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password"
+                  formControlName="confirmPassword"
+                  [class.is-invalid]="(submitted && formControls.confirmPassword.errors) ">
+               
+                <div
+                  *ngIf="formControls.userName.invalid && (formControls.userName.dirty || formControls.userName.touched)"
+                  class="invalid-feedback">
+                 
+                </div>
+              </div>
+  
+              <div class="loginBtn">
+                <button type="submit" class="btn btnBlock" (click)="validate()"
+                  [disabled]="submitted && registerForm.invalid">Register</button>
+              </div>
+  
+              <div class="allLogin">
+                <p style="cursor: pointer;" class="marPad0" routerLink="/login">Already have an account? <span style="color: #0198E0;">login
+                  </span></p>
+              </div>
+  
+  
+  
+            </div>
+          </form>
+        </div>
+      </div>
+  
+    </div>
+  
+  
+  
+  </div>
