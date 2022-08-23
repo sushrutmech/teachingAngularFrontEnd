@@ -2,7 +2,7 @@
     <div class="form">
         <form action="" [formGroup]="courseForm" (ngSubmit)="onSubmit()">
             <div class="formWrapper">
-                <h3>{{courseFormTitle}} Course </h3>
+                <h3> {{courseFormTitle}} Course </h3>
                 <div class="col-4">
                     <div class="input-group mb-3">
 
@@ -20,7 +20,7 @@
                         <input formControlName="courseImage" type="file" class="form-control" id="inputGroupFile01">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">{{btnText}}</button>
 
 
                 </div>

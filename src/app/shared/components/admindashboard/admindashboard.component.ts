@@ -12,6 +12,7 @@ export class AdmindashboardComponent implements OnInit {
   courseForm: FormGroup = new FormGroup({});
   courseList:any=[];
   courseFormTitle:any="Add";
+  btnText:any="Submit"
   activeCourseData:any;
   courseId:any;
 
@@ -94,6 +95,7 @@ export class AdmindashboardComponent implements OnInit {
     this.activeCourseData=data
     console.log( "course data", this.activeCourseData)
     this.courseFormTitle="Edit"
+    this.btnText="Update"
     this.courseForm = this.fb.group({
       courseName: [data.courseName, Validators.required],
       courseDescription: [data.courseDescription , Validators.required],

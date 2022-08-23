@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+    
   }
 
   get f(): any { return this.loginForm.controls; }
