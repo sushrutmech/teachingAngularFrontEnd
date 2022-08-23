@@ -1,0 +1,13 @@
+
+<div>
+    <h4> Dashboard</h4>
+</div>
+
+
+<div *ngIf="userRole=='user'">
+    <app-user-dashboard></app-user-dashboard> 
+</div>
+
+<div *ngIf="userRole=='admin'" >
+    <app-admindashboard></app-admindashboard>
+</div>

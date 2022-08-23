@@ -1,6 +1,6 @@
-<nav class="navbar bg-light">
+<nav class="navbar navColour">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Navbar</span>
+        <span class="navbar-brand mb-0 h1 " style="color: aliceblue;">Navbar</span>
 
         <div class="d-flex flex-row mb-3">
             <div class="cart">
@@ -20,7 +20,7 @@
                     Menu
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                    <li><a class="dropdown-item" routerLink='/dashBoard'>Dashboard</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
@@ -32,8 +32,8 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Login</a></li>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <li><a class="dropdown-item" routerLink="/login" >Login</a></li>
+                    <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
                 </ul>
             </div>
 

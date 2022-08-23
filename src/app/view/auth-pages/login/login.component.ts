@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
   returnUrl: string = "layout";
   submitted: boolean = false;
   defauluRedirectURL: string = '/layout/home'
-  userSession:any="userToken";
+  userSession: any = "userToken";
 
-  resData:any
+  resData: any
 
   constructor(
-    private _authService:AuthService,
+    private _authService: AuthService,
     private router: Router,
     private fb: FormBuilder
 
@@ -41,10 +41,11 @@ export class LoginComponent implements OnInit {
     this._authService.login(this.loginForm.value).subscribe({
       next: (res: any) => {
         alert("lonin sucessfully....")
-       
-        this.resData=res
-        console.log("response" , res.access_token)
-        localStorage.setItem(this.userSession, JSON.stringify(res.access_token))
+
+        this.resData = res
+        console.log("response", res.access_token)
+        localStorage.setItem(this.userSession, res.access_token)
+        this.userDetail();
         this.router.navigate([this.returnUrl]);
         // location.reload()
 
@@ -52,19 +53,34 @@ export class LoginComponent implements OnInit {
       error: err => {
         //console.log(err)
         //alert("invallid credential ......" + err)
-        this.resData=err.error.working 
+        this.resData = err.error.working
         console.log(err.error.working)
         alert(this.resData)
-       
+
         //console.log("//**", this.resData)
-        
+
       }
     })
 
+
+
+  }
+
+  userDetail() {
+    this._authService.userDetail().subscribe({
+      next: (res: any) => {
+        console.log("userDetail=>", res)
+        localStorage.setItem("userDetail", JSON.stringify(res))
+      },
+      error: err => {
+        console.log(err)
+      }
+
+    })
   }
 
 
 
-  
+
 
 }

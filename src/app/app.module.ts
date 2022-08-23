@@ -1,9 +1,10 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TokenInterceptorService } from './appServices/token-interceptor.service';
 import { AuthPagesModule } from './view/auth-pages/auth-pages.module';
 import { LandigpageModule } from './view/landigpage/landigpage.module';
 
@@ -18,7 +19,7 @@ import { LandigpageModule } from './view/landigpage/landigpage.module';
     HttpClientModule,
     LandigpageModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

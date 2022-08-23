@@ -1,0 +1,64 @@
+<div class="mainWrapper">
+    <div class="form">
+        <form action="" [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+            <div class="formWrapper">
+                <h3>{{courseFormTitle}} Course </h3>
+                <div class="col-4">
+                    <div class="input-group mb-3">
+
+                        <input type="text" class="form-control" placeholder="course name" aria-label="Username"
+                        formControlName="courseName"   aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+
+                        <input type="text" class="form-control" placeholder="course description " aria-label="Username"
+                        formControlName="courseDescription"   aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        
+                        <input formControlName="courseImage" type="file" class="form-control" id="inputGroupFile01">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="tableView">
+        <div class="col-6">
+            <table class="table">
+                <thead   >
+                  <tr >
+                    <th scope="col">Sr.No</th>
+                    <th scope="col">Coruse Name</th>
+                    <th scope="col">Course Description</th>
+                    <th scope="col">Course Image</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of courseList; let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.courseName}}</td>
+                    <td>{{item.courseDescription}} </td>
+                    <td>{{item.courseImage}}</td>
+                    <td>
+                        <div>
+                            <button (click)="getCourseData(item)" type="button" class="btn btn-success">Edits</button>
+                            <button (click)="deleteCourse(item)" type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+
+</div>

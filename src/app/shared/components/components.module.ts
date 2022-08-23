@@ -1,12 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    UserDashboardComponent,
+    AdmindashboardComponent,
+    
+  ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  exports: [
+    UserDashboardComponent,
+    AdmindashboardComponent
+  ],
 })
 export class ComponentsModule { }
