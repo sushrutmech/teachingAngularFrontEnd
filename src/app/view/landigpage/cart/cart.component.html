@@ -1,15 +1,17 @@
+<p>My cart</p>
 
+<h1>My Cart</h1>
 
 <div class="cardWrapper">
     <div class="container">
-        <div class="child" *ngFor="let item of courseList">
+        <div class="child" *ngFor="let item of cartCourseList">
             <div class="card" style="width: 18rem;">
                 <img src="./assets/images/cardImg.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"> {{item.courseName}}  </h5>
                     <p class="card-text"> {{item.courseDescription}} </p>
-                    <button (click)="courseDetail(item)" class="btn btn-primary">Know more</button>
-                    <button class="btn" (click)="addCourseToCart(item)"><img src="./assets/icons/shopping_cart_black_24dp.svg" alt=""></button>
+                    <a href="#" class="btn btn-primary">Know more</a>
+                    <button class="btn" (click)="deleteCourseToCart(item)"><img src=".../../../../../../assets/icons/remove_shopping_cart_black_24dp.svg" alt=""></button>
                     <!-- <button class="btn"><img src=".../../../../../../assets/icons/" alt=""></button> -->
                     <button class="btn"><img src=".../../../../../../assets/icons/favorite_border_black_24dp.svg" alt=""></button>
                     

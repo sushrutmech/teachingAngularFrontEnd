@@ -11,9 +11,9 @@ import { AuthService } from 'src/app/appServices/auth.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup = new FormGroup({});
-  returnUrl: string = "layout";
+  returnUrl: string = "home";
   submitted: boolean = false;
-  defauluRedirectURL: string = '/layout/home'
+  defauluRedirectURL: string = '/home'
   userSession: any = "userToken";
 
   resData: any

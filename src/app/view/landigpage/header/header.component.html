@@ -1,53 +1,59 @@
-<nav class="navbar navColour">
-    <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1 " style="color: aliceblue;">Navbar</span>
 
-        <div class="d-flex flex-row mb-3">
-            <div class="cart">
-                <button type="button" routerLink="/home" class="btn btn-primary position-relative">
-                    Home
-                    <span class="p bg-danger">
-                        
-                        <span class="visually-hidden">Home</span>
-                    </span>
-                </button>
+<div >
 
+    <nav class="navbar navColour">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1 " style="color: aliceblue;">Navbar</span>
+    
+            <div class="d-flex flex-row mb-3">
+                <div class="cart">
+                    <button type="button" routerLink="/home" class="btn btn-primary position-relative">
+                        Home
+                        <span class="p bg-danger">
+                            
+                            <span class="visually-hidden">Home</span>
+                        </span>
+                    </button>
+    
+                </div>
+                <div class="cart">
+                    <button routerLink='/layout/cart' type="button" class="btn btn-primary position-relative">
+                        Cart
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{cartCourseList.length}} 
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button>
+    
+                </div>
+    
+                <div class="dropdown" style="margin-right: 18px;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Menu
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink='/dashBoard'>Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Profile
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" routerLink="/login" >Login</a></li>
+                        <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+                    </ul>
+                </div>
+    
             </div>
-            <div class="cart">
-                <button type="button" class="btn btn-primary position-relative">
-                    Cart
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        99+
-                        <span class="visually-hidden">unread messages</span>
-                    </span>
-                </button>
-
-            </div>
-
-            <div class="dropdown" style="margin-right: 18px;">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Menu
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink='/dashBoard'>Dashboard</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Profile
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" routerLink="/login" >Login</a></li>
-                    <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
-                </ul>
-            </div>
-
         </div>
-    </div>
+    
+    </nav>
 
-</nav>
+</div>
+

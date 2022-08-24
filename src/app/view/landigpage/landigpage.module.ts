@@ -6,13 +6,17 @@ import { HeaderComponent } from './header/header.component';
 import { MiddleComponent } from './middle/middle.component';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { DashboarcontainerComponent } from './dashboarcontainer/dashboarcontainer.component';
+import { CartComponent } from './cart/cart.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     MiddleComponent,
-    DashboarcontainerComponent
+    DashboarcontainerComponent,
+    CartComponent,
+    CourseDetailComponent
   ],
   imports: [
     CommonModule,

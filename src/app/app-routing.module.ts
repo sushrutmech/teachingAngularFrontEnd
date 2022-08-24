@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guard/auth.guard';
 import { LoginComponent } from './view/auth-pages/login/login.component';
 import { RegisterComponent } from './view/auth-pages/register/register.component';
 import { MiddleComponent } from './view/landigpage/middle/middle.component';
@@ -7,10 +8,10 @@ import { MiddleComponent } from './view/landigpage/middle/middle.component';
 const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "home", component:MiddleComponent },
+  { path: "home", component: MiddleComponent },
   {
     path: "layout",
-    
+    canActivate: [AuthGuard],
     loadChildren: () => import("./view/landigpage/landigpage.module")
       .then(mod => mod.LandigpageModule)
   },
