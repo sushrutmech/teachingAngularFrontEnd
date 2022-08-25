@@ -52,4 +52,12 @@ export class CourseService {
     return this.http.get<any>(this.courseUrl+`getCourseFromCart`)
   }
 
+  likeCourse(params:any){
+    return this.http.post<any>(this.courseUrl+`likeCourse`, params)
+  }
+
+  disLikeCourse(params:any){
+    return this.http.post<any>(this.courseUrl+`disLikeCourse`, params)
+  }
+
 }

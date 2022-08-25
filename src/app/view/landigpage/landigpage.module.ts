@@ -8,6 +8,7 @@ import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { DashboarcontainerComponent } from './dashboarcontainer/dashboarcontainer.component';
 import { CartComponent } from './cart/cart.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { CommentsModule } from '../comments/comments.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
   imports: [
     CommonModule,
     LandigpageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    CommentsModule
   ],
   exports: [
     HeaderComponent,

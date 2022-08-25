@@ -26,6 +26,10 @@ export class MiddleComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getAllCourses();
+  }
+
+  getAllCourses(){
     this._courseService.getCourse().subscribe(res => {
       this.courseList = res.courseList
       console.log("middle component ", this.courseList)
@@ -76,7 +80,49 @@ export class MiddleComponent implements OnInit {
      let navigationExtras: NavigationExtras = { queryParams }
      console.log("navigation data", navigationExtras)
      this.router.navigate(["layout/courseDetail/" + JSON.stringify(selectedCourse._id)], navigationExtras);
- 
+  }
+
+  likeCourse( selectedCourse:any){
+    let params ={
+      courseId:selectedCourse._id,
+      courseLike:this.userId
+    }
+    console.log("params" , params)
+    this._courseService.likeCourse(params).subscribe({
+      next: (res: any) => {
+        alert("like course sucessfully....")
+        console.log("response", res)
+        this.getCartCourses()
+        this.getAllCourses();
+        //location.reload()
+      },
+      error: err => {
+        console.log(err.error.working)
+        alert(err)
+      }
+    })
+
+  }
+
+  disLikeCourse(selectedCourse:any){
+    let params ={
+      courseId:selectedCourse._id,
+      courseDislike:this.userId
+    }
+    console.log("params" , params)
+    this._courseService.disLikeCourse(params).subscribe({
+      next: (res: any) => {
+        alert("dislike course sucessfully....")
+        console.log("response", res)
+        this.getCartCourses()
+        this.getAllCourses();
+        //location.reload()
+      },
+      error: err => {
+        console.log(err.error.working)
+        alert(err)
+      }
+    })
   }
 
 }
