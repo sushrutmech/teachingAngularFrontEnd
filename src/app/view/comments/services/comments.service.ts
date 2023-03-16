@@ -7,8 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CommentsService {
-
-  commentUrl:any="http://localhost:3000/conversation/"
+ //https://fuzzy-getup-moth.cyclic.app/main/
+ //online server url
+  commentUrl:any="https://fuzzy-getup-moth.cyclic.app/conversation/"
   constructor(private httpClient: HttpClient) {}
 
   getComments(): Observable<CommentInterface[]> {

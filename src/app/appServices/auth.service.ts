@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  authUrl:any="http://localhost:3000/auth/"
+  authUrl:any="https://fuzzy-getup-moth.cyclic.app/auth/"
 
   userSession:any;
   null:any=null;

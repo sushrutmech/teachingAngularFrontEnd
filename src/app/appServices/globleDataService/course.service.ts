@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CourseService {
-  courseUrl: any = "http://localhost:3000/course/"
+  courseUrl: any = "https://fuzzy-getup-moth.cyclic.app/course/"
   coursesInCart = new Subject<any>()
   
   constructor(
@@ -17,7 +17,7 @@ export class CourseService {
 
   getCourse() {
     //console.log("fromservice", this.http.get<any>(this.courseUrl + `courses`))
-    return this.http.get<any>("http://localhost:3000/course/courses")
+    return this.http.get<any>("https://fuzzy-getup-moth.cyclic.app/course/courses")
   }
 
   postCourse(params:any){
